@@ -12,9 +12,6 @@
 #' plot(1,1)
 #' dev.off()	
 #' }
-
-
-  
 write.pdf<-function(filename,heightmm=173,widthmm=173,metricsystem="mm"){
   if(metricsystem !='inch'){
   i2mm<-25.4

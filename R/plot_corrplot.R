@@ -10,7 +10,6 @@
 #' library(MASS)
 #' data(mtcars)
 #' cormatrix_r_p(as.numeric(na.omit(mtcars)))
-
 plot_corrplot<-function(dataset,columnpos=NULL,filename=NULL, method="pearson"){
 require(corrplot)
 
@@ -34,5 +33,4 @@ corrplot.mixed(c,tl.pos="lt")
 
 if(!is.null(filename)){dev.off() }
  
-
 }

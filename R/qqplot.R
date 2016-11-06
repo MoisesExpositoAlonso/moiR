@@ -6,9 +6,6 @@
 #' @examples
 #' qqplot(pvals=c(0.001,0.05,0.9))
 #'
-
-
-
 qqplot<-function(pvals,name=NULL){
 
   observed <- sort(pvals)
@@ -30,5 +27,3 @@ qqplot<-function(pvals,name=NULL){
     dev.off()
   }
 }
- 
- qqGWA<-qqplot

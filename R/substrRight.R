@@ -7,7 +7,6 @@
 #' @examples
 #' substrRight(monkey, 2,giveright=T)
 #' substrRight(monkey, 2,giveright=F)
-
 substrRight <- function(x, lastpos,giveright=T){
   if(giveright==T){
   substr(x, nchar(x)-lastpos+1, nchar(x))
