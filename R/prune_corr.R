@@ -1,12 +1,14 @@
 #' Prune a set of variables by a certain correlation threshold
 #' 
-#'
+#' 
 #' @param thedata A numeric matrix of variables
 #' @param  threshold The threshold of correlation coefficient. Default 0.8 
 #' @return A numeric matrix subset of thedata without the highly correlated variables
 #' @examples
 #' data(mtcars)
 #' prune_corr(mtcars)  
+#' 
+#' @export
 cor_melt_sub<-function(thedata,threshold=.8){
   require(reshape2)
 corr.matrix <- cor(thedata)
@@ -18,10 +20,13 @@ return(cormeltsub)
 }
 
 #' Iterative prunning of a set of variables by a certain correlation threshold.
+#'
 #' @param  iterations The algorithm function will stop when no more variables are correlated 
 #'     over the specificed threshold or given a number of iterations. This is importante for big
 #'     datasets with thousands of variables, which perhaps is not that appropriate for the function.
 #' @inheritParams cor_melt_sub
+#' 
+#' @export
 prune_corr<-function(thedata, threshold=.8, iterations=10){
   cormeltsub<-cor_melt_sub(thedata,threshold)
   prundata<-thedata

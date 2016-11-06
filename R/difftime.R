@@ -1,13 +1,13 @@
-#' Add together two numbers.
+#' Difference in time 
+#' Given a time point in the past, this function gives you the difference
 #' 
-#' @param x A number.
-#' @param y A number.
-#' @return The sum of \code{x} and \code{y}.
+#' @return A time string
 #' @examples
-#' add(1, 1)
-#' add(10, 1)
-add <- function(x, y) {
-    x + y
+#' difference_in_time<-difftime(thetimenow)
+#' 
+#' @export
+difftime<-function(timestart){
+  cat(paste('time in sec', c(proc.time()[1] - timestart),
+        '\ntime in min', c(proc.time()[1] - timestart)/60,'\n'  ))
 }
-
 

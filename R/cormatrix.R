@@ -11,6 +11,7 @@
 #' library(MASS)
 #' data(mtcars)
 #' cormatrix_r_p(as.numeric(na.omit(mtcars)))
+#' @export
 cormatrix_r_p<-function(numericdatanona,columnpos=NULL,filename=NULL,method="pearson") {
 
 if(is.null(columnpos)){ 	columnpos=1:dim(dataset) }

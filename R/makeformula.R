@@ -3,8 +3,11 @@
 #' @param response variable response, only one string.
 #' @param predictors predicting variables, vector of strings.
 #' @return A formula object that can be feed to lm, glm, aov, randomForest, etc.
+#' @export
 #' @examples
 #' makeformula(response="phenotype",predictors=c("bio1","bio2"))
+#' @export
+
 makeformula<-function(response,predictors){
 t <- paste0(predictors ,collapse = " + ")
 t1 <- paste(response," ~", t)

@@ -4,7 +4,8 @@
 #' @return A character vector of stars that represent simbolically significance
 #' @examples
 #' starpvalue(x=c(0.0002354, 0.658))
-#' 
+#' @export
+ 
 
 starpvalue<-function(x){
 

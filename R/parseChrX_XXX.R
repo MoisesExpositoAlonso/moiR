@@ -10,6 +10,8 @@
 #' @examples
 #' parseChrX_XXX(strings=c("Chr4_54135","Chr1_18965"))
 #' makeChrX_XXX(chr=c("4", "1"),pos=c("54135","18965") )
+#' @export
+
 parseChrX_XXX<-function(strings){
   spl<-unlist(strsplit(gwanew$namesite,split = "_",fixed=T))
   chr<-gsub( spl[seq(1,length(spl),by=2)], pattern = "Chr",replacement = "")

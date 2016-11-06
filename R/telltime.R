@@ -1,13 +1,14 @@
-#' Give me the time.
+#' Tell me the time
+#' This function returns the time
 #' 
-#' @param x A number.
-#' @param y A number.
-#' @return The sum of \code{x} and \code{y}.
+#' @return A time string
 #' @examples
-#' add(1, 1)
-#' add(10, 1)
-add <- function(x, y) {
-    x + y
-}
+#' thetimenow<-telltime()
+#' 
+#' @export
 
+telltime<-function(){
+ptm <- proc.time()
+return(ptm[1])
+}
 
