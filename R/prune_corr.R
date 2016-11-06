@@ -1,5 +1,6 @@
-#' Prune a set of variables by a certain correlation threshold.
+#' Prune a set of variables by a certain correlation threshold
 #' 
+#'
 #' @param thedata A numeric matrix of variables
 #' @param  threshold The threshold of correlation coefficient. Default 0.8 
 #' @return A numeric matrix subset of thedata without the highly correlated variables
@@ -16,6 +17,7 @@ cormeltsub$Var2 <- as.character.factor(cormeltsub$Var2)
 return(cormeltsub)
 }
 
+#' Iterative prunning of a set of variables by a certain correlation threshold.
 #' @param  iterations The algorithm function will stop when no more variables are correlated 
 #'     over the specificed threshold or given a number of iterations. This is importante for big
 #'     datasets with thousands of variables, which perhaps is not that appropriate for the function.

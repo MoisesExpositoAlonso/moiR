@@ -1,4 +1,3 @@
-# add_commas
 #' Add commas to a large number
 #'
 #' Convert a number to a string, with commas every 3rd digit

@@ -2,24 +2,20 @@
 % Please edit documentation in R/prune_corr.R
 \name{cor_melt_sub}
 \alias{cor_melt_sub}
-\title{Prune a set of variables by a certain correlation threshold.}
+\title{Prune a set of variables by a certain correlation threshold}
 \usage{
-cor_melt_sub(thedata, threshold)
+cor_melt_sub(thedata, threshold = 0.8)
 }
 \arguments{
 \item{thedata}{A numeric matrix of variables}
 
 \item{threshold}{The threshold of correlation coefficient. Default 0.8}
-
-\item{iterations}{The algorithm function will stop when no more variables are correlated 
-over the specificed threshold or given a number of iterations. This is importante for big
-datasets with thousands of variables, which perhaps is not that appropriate for the function.}
 }
 \value{
 A numeric matrix subset of thedata without the highly correlated variables
 }
 \description{
-Prune a set of variables by a certain correlation threshold.
+Prune a set of variables by a certain correlation threshold
 }
 \examples{
 data(mtcars)
