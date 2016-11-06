@@ -9,7 +9,7 @@ Imports:
     reshape2
 Suggests:
     devtools
-
+URL: https://github.com/MoisesExpositoAlonso/moiR
 License: To be determined
 Encoding: UTF-8
 LazyData: true
