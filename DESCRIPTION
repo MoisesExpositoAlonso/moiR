@@ -1,0 +1,10 @@
+Package: moiR
+Title: A set of R functions for an easy life and analyses
+Version: 0.0.0.9000
+Authors@R: person("Moises", "Exposito-Alonso", email = "moisesexpositoalonso@gmail.com", role = c("aut", "cre"))
+Description: This package contains functions for data manipulation, fast plotting, things that you have to write in every script.
+Depends: R (>= 3.3.1)
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 5.0.1.9000
