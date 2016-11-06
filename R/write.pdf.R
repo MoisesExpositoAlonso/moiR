@@ -1,8 +1,8 @@
 #' A customized pdf function
 #' 
 #' @param file filename. Include .pdf ending
-#' @param height
-#' @param width
+#' @param height height of the plot
+#' @param width width of the plot
 #' @param metricsystem String either "mm" or "inch". Default "mm" as it should be ;P
 #' @return outputs a pdf
 #' @examples
