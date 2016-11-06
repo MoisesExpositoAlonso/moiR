@@ -10,6 +10,10 @@ write.pdf(filename, heightmm = 173, widthmm = 173, metricsystem = "mm")
 \item{metricsystem}{String either "mm" or "inch". Default "mm" as it should be ;P}
 
 \item{file}{filename. Include .pdf ending}
+
+\item{height}{height of the plot}
+
+\item{width}{width of the plot}
 }
 \value{
 outputs a pdf
