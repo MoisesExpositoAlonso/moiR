@@ -22,5 +22,6 @@ Customized write.table function with table separated values.
 examplematrix<-matrix(ncol=2, c(1,2,3,4))
 write.tsv(examplematrix,"myexample.tsv")
 }
+
 }
 

@@ -19,6 +19,5 @@ Produce a qqplot to evaluate p-value inflation.
 }
 \examples{
 qqplot(pvals=c(0.001,0.05,0.9))
-
 }
 

@@ -17,6 +17,5 @@ Transform a vector of p-values into ***, **, *, ., ns
 }
 \examples{
 starpvalue(x=c(0.0002354, 0.658))
-
 }
 
