@@ -6,9 +6,14 @@ Description: This package contains functions for data manipulation, fast plottin
 Depends: R (>= 3.3.1)
 Imports:
     ggplot2,
-    reshape2
+    cowplot,
+    reshape2,
+    RColorBrewer
 Suggests:
-    devtools
+    devtools,
+    cshapes,
+    gpclib,
+    rgdal
 URL: https://github.com/MoisesExpositoAlonso/moiR
 License: To be determined
 Encoding: UTF-8

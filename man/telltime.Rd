@@ -16,6 +16,5 @@ This function returns the time
 }
 \examples{
 thetimenow<-telltime()
-
 }
 
