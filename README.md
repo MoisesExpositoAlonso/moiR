@@ -1,6 +1,7 @@
 
 # Some handy R functions for an easier life and analyses
-## Most functions fall in the next categories
+
+ Most functions fall in the next categories
 * Plotting (I use base plot, but prefer ggplot2 and cowplot)
 * Manipulation functions, such as writing functions or format functions
 * Few wrap functions for common analyses: regression, contrasts, etc.
