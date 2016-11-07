@@ -1,3 +1,8 @@
 .Rproj.user
 .Rhistory
 .RData
+udpate_package.R
+udpate_package.sh
+build_n_copy.R
+*swp
+*~
