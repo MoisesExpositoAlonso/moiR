@@ -4,20 +4,22 @@
 \alias{envir_plot}
 \title{Pretty plot of raster object}
 \usage{
-envir_plot(raster, objectname = deparse(substitute(raster)), dimcol = 100,
-  name = "", vecol = NULL, breaks = format(seq(rangecol[1], rangecol[2],
+envir_plot(raster, objectname = deparse(substitute(raster)), name = "",
+  dimcol = 100, vecol = c("cyan", "dodgerblue1", "blue", "forestgreen",
+  "orange", "red", "purple"), breaks = format(seq(rangecol[1], rangecol[2],
   len = numbreak), digits = 1), rangecol = c(min(values(raster), na.rm = T),
-  max(values(raster), na.rm = T)), numbreak = 5, contrast = 0, pdf = F)
+  max(values(raster), na.rm = T)), numbreak = 5, contrast = 0, pdf = F,
+  add = F)
 }
 \value{
-Prints a plot with the given test p-value. If title is provided, it prints into a pdf.
+Prints a plot of a raster object with a nice color palette and without axis (easily changed). If desired, it is outputed as pdf.
 }
 \description{
 Pretty plot of raster object
 }
 \examples{
-group1=rnorm(n = 100,mean = 1,sd = 1)
-group1=rnorm(n = 100,mean = 2,sd = 1)
-thetimenow<-contrast_test(group1,group2)
+
+
+
 }
 
