@@ -16,7 +16,7 @@
 #' 
 
 ggdotscolor<-function(data=NULL,x,y,varcol, ylab=NULL,xlab=NULL,collab=NULL,mycolors=brewer.pal(10,name = "RdBu")){
-require(RColorBrewer)
+library(ggplot2);library(cowplot);library(RColorBrewer)
 
 # data frame
 if(!is.null(data)){

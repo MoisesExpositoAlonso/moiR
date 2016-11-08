@@ -11,6 +11,7 @@ Imports:
     RColorBrewer
 Suggests:
     devtools,
+    raster,
     cshapes,
     gpclib,
     rgdal
