@@ -9,10 +9,10 @@ envirplot(raster, objectname = deparse(substitute(raster)), name = "",
   "orange", "red", "purple"), breaks = format(seq(rangecol[1], rangecol[2],
   len = numbreak), digits = 1), rangecol = c(min(values(raster), na.rm = T),
   max(values(raster), na.rm = T)), numbreak = 5, contrast = 0, pdf = F,
-  add = F)
+  add = F, plotlegend = T)
 }
 \value{
-Prints a plot of a raster object with a nice color palette and without axis (easily changed). If desired, it is outputed as pdf.
+Prints a plot of a raster object with a nice color palette and without axis (easily changed). If desired, it is outputed as pdf'.
 }
 \description{
 Pretty plot of raster object
