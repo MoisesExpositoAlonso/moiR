@@ -7,6 +7,11 @@ This function applies the level of transparency desired for a color or vector of
 \usage{
 transparent(col, alpha = 0.5)
 }
+\arguments{
+\item{alpha}{Numerical between 0 and 1.}
+
+\item{color}{HEX code or name.}
+}
 \value{
 The color HEX after applying a number of transparency
 }

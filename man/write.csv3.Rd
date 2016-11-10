@@ -19,7 +19,7 @@ Customized write.csv function.
 }
 \examples{
 \dontrun{
-examplematrix<-matrix(ncol=2, c(1,2,3,4))
+mymatrix<-matrix(ncol=2, c(1,2,3,4))
 write.csv2(examplematrix,"myexample.csv")
 }
 

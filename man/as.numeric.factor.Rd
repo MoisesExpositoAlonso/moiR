@@ -7,6 +7,9 @@ I do not know why this is not in base package.}
 \usage{
 \method{as.numeric}{factor}(x)
 }
+\arguments{
+\item{a}{factor object that you want to convert to numeric format}
+}
 \value{
 A numeric vector
 }
@@ -16,5 +19,6 @@ I do not know why this is not in base package.
 }
 \examples{
 as.numeric.factor(as.factor(c(1:5)))
+
 }
 

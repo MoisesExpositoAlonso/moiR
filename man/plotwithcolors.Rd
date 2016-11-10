@@ -7,6 +7,13 @@
 plotwithcolors(x, y, colorvar, palette = c("red", "orange", "yellow", "green",
   "blue"), pch = 19, alpha = 0.5)
 }
+\arguments{
+\item{colorvar}{}
+
+\item{numeric1}{a numeric vector of group 1}
+
+\item{numeric2}{a numeric vector of group 2}
+}
 \value{
 A scatter plot from base plot with points colored by the rank of a given variable
 }
@@ -18,6 +25,7 @@ x=rnorm(n = 100,mean = 1,sd = 1)
 y=rnorm(n = 100,mean = 2,sd = 1)
 z=rnorm(n = 100,mean = 3,sd = 1)
 plotwithcolors(x=x,y=y,colorvar=z)
+
 }
 \seealso{
 ggdotscolor

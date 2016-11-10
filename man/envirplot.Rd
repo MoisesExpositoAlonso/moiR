@@ -11,6 +11,31 @@ envirplot(raster, objectname = deparse(substitute(raster)), name = "",
   max(values(raster), na.rm = T)), numbreak = 5, contrast = 0, pdf = F,
   add = F, plotlegend = T)
 }
+\arguments{
+\item{raster}{A raster layer object}
+
+\item{objectname}{The name of the object plotted or other name to keep track of the pdf}
+
+\item{name}{Title fo the plot}
+
+\item{dimcol}{Number of color breaks in the gradient}
+
+\item{vecol}{Color vector for the palette}
+
+\item{breaks}{Breaks used in the color scale}
+
+\item{rangecol}{Range of the color palette}
+
+\item{numbreak}{Number of breaks in the color scale}
+
+\item{contrast}{Interger for number of increase contrast iteration}
+
+\item{pdf}{Logical whether to output plot as pedf}
+
+\item{add}{Logical whether this plot will be overplotted on an existing one in the graphic device}
+
+\item{plotlegend}{Logical whether the color legend is plotted. Useful when overlaying two maps.}
+}
 \value{
 Prints a plot of a raster object with a nice color palette and without axis (easily changed). If desired, it is outputed as pdf'.
 }

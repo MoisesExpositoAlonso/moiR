@@ -1,8 +1,9 @@
 #' Color palete jet colors from Matlab
 #' 
-#' @parameter palette Logical whether you want to return a palette object or not.
+#' @param palette Logical whether you want to return a palette object or not.
 #' @return Either a vector of colors or a palette object
-#' example
+#'
+#' examples
 #' plot(1:10,1:10, col=jet.colors(palette=T))
 #' @export
 

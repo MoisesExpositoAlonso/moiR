@@ -6,9 +6,13 @@
 \usage{
 jet.colors(palette = F)
 }
+\arguments{
+\item{palette}{Logical whether you want to return a palette object or not.}
+}
 \value{
 Either a vector of colors or a palette object
-example
+
+examples
 plot(1:10,1:10, col=jet.colors(palette=T))
 }
 \description{

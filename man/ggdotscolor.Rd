@@ -7,6 +7,15 @@
 ggdotscolor(data = NULL, x, y, varcol, ylab = NULL, xlab = NULL,
   collab = NULL, mycolors = brewer.pal(10, name = "RdBu"))
 }
+\arguments{
+\item{data}{A dataset with 3 columns. It is assumed that 1 is x, 2 is y, 3 is varcol. This substitutes the use of x, y and varcol.}
+
+\item{x}{a numeric vector of group 1}
+
+\item{y}{a numeric vector of group 2}
+
+\item{varcol}{either a numeric vector (continuous scale plotting) or factor variable (discrete plotting)}
+}
 \value{
 A scatter plot from base plot with points colored by the rank of a given variable
 }

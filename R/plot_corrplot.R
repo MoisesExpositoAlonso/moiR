@@ -4,12 +4,16 @@
 #' @param columnpos In case you want to compute correlations of a subset of columns. Default NULL
 #' @param filename Optional parameter, if provided a string, it will output the plot in a pdf in the working directory. Default NULL
 #' @param the different methods possible in cor function. Default "pearson". Other possibilities are "spearman" or "kendall"
+#'
 #' @return If a file name is indicated, an output pdf plot. Otherwise, prints to the graphic device.
+#'
 #' @examples
 #' library(MASS)
 #' data(mtcars)
 #' cormatrix_r_p(as.numeric(na.omit(mtcars)))
+#'
 #' @export
+#'
 
 plot_corrplot<-function(dataset,columnpos=NULL,filename=NULL, method="pearson"){
 require(corrplot)

@@ -1,16 +1,19 @@
 #' Quick scatter plot with points colored by a 3rd variable
 #' 
-#' @parameter numeric1 a numeric vector of group 1 
-#' @parameter numeric2 a numeric vector of group 2
-#' @parameter colorvar
+#' @param numeric1 a numeric vector of group 1 
+#' @param numeric2 a numeric vector of group 2
+#' @param colorvar
 #'
 #' @return A scatter plot from base plot with points colored by the rank of a given variable
+#'
 #' @examples
 #' x=rnorm(n = 100,mean = 1,sd = 1)
 #' y=rnorm(n = 100,mean = 2,sd = 1)
 #' z=rnorm(n = 100,mean = 3,sd = 1)
 #' plotwithcolors(x=x,y=y,colorvar=z)
+#'
 #' @seealso ggdotscolor
+#'
 #' @export
 #' 
 plotwithcolors<-function(x,y,colorvar,palette=c("red","orange","yellow","green","blue"),pch=19,alpha=0.5){

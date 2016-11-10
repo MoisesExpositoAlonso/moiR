@@ -26,5 +26,6 @@ Plot correlations of all pairs o variables .
 library(MASS)
 data(mtcars)
 cormatrix_r_p(as.numeric(na.omit(mtcars)))
+
 }
 

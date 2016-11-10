@@ -1,10 +1,12 @@
 #' Quick scatter plot with points colored by a 3rd variable
 #' 
-#' @parameter x a numeric vector of group 1 
-#' @parameter y a numeric vector of group 2
-#' @parameter varcol either a numeric vector (continuous scale plotting) or factor variable (discrete plotting)
-#' @parameter data A dataset with 3 columns. It is assumed that 1 is x, 2 is y, 3 is varcol. This substitutes the use of x, y and varcol.
+#' @param x a numeric vector of group 1 
+#' @param y a numeric vector of group 2
+#' @param varcol either a numeric vector (continuous scale plotting) or factor variable (discrete plotting)
+#' @param data A dataset with 3 columns. It is assumed that 1 is x, 2 is y, 3 is varcol. This substitutes the use of x, y and varcol.
+#'
 #' @return A scatter plot from base plot with points colored by the rank of a given variable
+#'
 #' @examples
 #' x=rnomr(1,1,100)
 #' y=rnorm(1,2,100)

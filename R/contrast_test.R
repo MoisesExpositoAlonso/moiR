@@ -1,18 +1,20 @@
 #' Quick plot + contrast hypothesis test to compare two populations
 #' 
-#' @parameter numeric1 a numeric vector of group 1 
-#' @parameter numeric2 a numeric vector of group 2
-#' @parameter method string, either t.student (parametric) or wilcox.test (nonparametric)
-#' @parameter title string with the name of the plot
-#' @parameter wantpoints Logical FALSE/TRUE to determine whether points will be overplotted
-#' @parameter wantviolin Logical FALSE/TRUE to determine whether you want a violine plot in the background
-#' @parameter The colors of the two groups. Default c("darkorchid4","aquamarine4")
+#' @param numeric1 a numeric vector of group 1 
+#' @param numeric2 a numeric vector of group 2
+#' @param method string, either t.student (parametric) or wilcox.test (nonparametric)
+#' @param title string with the name of the plot
+#' @param wantpoints Logical FALSE/TRUE to determine whether points will be overplotted
+#' @param wantviolin Logical FALSE/TRUE to determine whether you want a violine plot in the background
+#' @param The colors of the two groups. Default c("darkorchid4","aquamarine4")
 #'
 #' @return Prints a plot with the given test p-value. If title is provided, it prints into a pdf.
+#'
 #' @examples
 #' group1=rnorm(n = 100,mean = 1,sd = 1)
 #' group1=rnorm(n = 100,mean = 2,sd = 1)
 #' thetimenow<-contrast_test(group1,group2)
+#'
 #' @export
 #' 
 
