@@ -7,9 +7,10 @@ Depends: R (>= 3.2.0)
 Imports:
     ggplot2,
     cowplot,
-    reshape2,
     RColorBrewer
 Suggests:
+	dplyr,
+    tidyr,
     devtools,
     raster,
     cshapes,
