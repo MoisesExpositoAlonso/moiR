@@ -4,7 +4,14 @@
 \alias{make.pallete.contrast}
 \title{Add contrast to a color palette}
 \usage{
-make.pallete.contrast(vecol, contrast = 1)
+make.pallete.contrast(vecol, contrast = 1, raw = F)
+}
+\arguments{
+\item{vecol}{A vector of colors}
+
+\item{contrast}{Interger with the number of iterations of contrast desired}
+
+\item{raw}{Logical. Do you want the raw colors or the pallete function?}
 }
 \value{
 A colorRampPallete object with the desired contast if any
@@ -14,5 +21,6 @@ Add contrast to a color palette
 }
 \examples{
 make.pallete.contrast(c("red","orange","yellow","green","blue"), contrast=2)
+
 }
 

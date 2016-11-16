@@ -2,9 +2,12 @@
 #' 
 #' @param pvals A numeric vectors with p-values 
 #' @param  name If outputing plot is desirable, string.
+#'
 #' @return Either outputs a plot in pdf or prints to the graphic device
+#'
 #' @examples
 #' qqplot(pvals=c(0.001,0.05,0.9))
+#'
 #' @export
 qqplot<-function(pvals,name=NULL){
 
