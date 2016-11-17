@@ -1,6 +1,6 @@
 #' Quick scatter plot with points colored by a 3rd variable
-#' 
-#' @param x a numeric vector of group 1 
+#'
+#' @param x a numeric vector of group 1
 #' @param y a numeric vector of group 2
 #' @param varcol either a numeric vector (continuous scale plotting) or factor variable (discrete plotting)
 #' @param data A dataset with 3 columns. It is assumed that 1 is x, 2 is y, 3 is varcol. This substitutes the use of x, y and varcol.
@@ -12,12 +12,12 @@
 #' y=rnorm(1,2,100)
 #' x=rnorm(1,3,100)
 #' plotwithcolors(x=x,y=y,colorvar=z)
-#' 
+#'
 #' @seealso ggplot_world_map
 #' @export
-#' 
+#'
 
-ggdotscolor<-function(data=NULL,x,y,varcol, ylab=NULL,xlab=NULL,collab=NULL,mycolors=brewer.pal(10,name = "RdBu")){
+ggdotscolor<-function(data=NULL,x,y,varcol, ylab=NULL,xlab=NULL,collab=NULL,mycolors=brewer.pal(10,name = "RdBu"),contrast=0,...){
 library(ggplot2);library(cowplot);library(RColorBrewer)
 
 # data frame
@@ -34,15 +34,15 @@ if(is.null(ylab)){ xlab=deparse(substitute(x)) }
 if(is.null(xlab)){ ylab=deparse(substitute(y)) }
 if(is.null(collab)){ collab=deparse(substitute(varcol)) }
 
-p<-ggplot(toplot)+geom_point(aes(x=x,y=y , col=varcol ),alpha=0.5) + xlab(xlab)+ylab(ylab)
+p<-ggplot(toplot)+geom_point(aes(x=x,y=y , col=varcol ),...) + xlab(xlab)+ylab(ylab)
 
-# color 
+# color
 if(is.factor(toplot$varcol)){
 	print("varcol is a factor!")
 		if(mycolors==brewer.pal(10,name = "RdBu")){
 		mycolors=c("#1f78b4","#b2df8a","#33a02c","#fb9a99","#e31a1c","#fdbf6f","#ff7f00","#cab2d6","#6a3d9a","gold","#a6cee3")
 		}
-	colpal<-make.pallete.contrast(colors11)
+	colpal<-make.pallete.contrast(colors11,contrast)
 	p<-p+ scale_color_manual(collab,values=colpal(length(levels(varcol))),breaks=levels(varcol) )
 
 }else{
