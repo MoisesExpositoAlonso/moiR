@@ -7,7 +7,6 @@
 #'
 #' @examples
 #'
-#' @seealso 
 #' @export
 #'
 fn<-function(data.frame){
