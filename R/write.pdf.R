@@ -14,12 +14,14 @@
 #' }
 #' @export
 
-write.pdf<-function(filename,heightmm=173,widthmm=173,metricsystem="mm"){
+write.pdf<-function(filename,heightmm=173,widthmm=173,metricsystem="mm",timestamp=F){
   if(metricsystem !='inch'){
   i2mm<-25.4
 	heightmm=heightmm/i2mm
 	widthmm=widthmm/i2mm
   }
 
+  if(timestamp==T){ substrRight(filename,lastpos=4,	giveright=F) }
+  
   pdf(useDingbats=F,file=filename,height=heightmm,width=widthmm)
 }

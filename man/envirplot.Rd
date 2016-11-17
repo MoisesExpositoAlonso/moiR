@@ -8,8 +8,9 @@ envirplot(raster, objectname = deparse(substitute(raster)), name = "",
   dimcol = 100, vecol = c("cyan", "dodgerblue1", "blue", "forestgreen",
   "orange", "red", "purple"), breaks = format(seq(rangecol[1], rangecol[2],
   len = numbreak), digits = 1), rangecol = c(min(values(raster), na.rm = T),
-  max(values(raster), na.rm = T)), numbreak = 5, contrast = 0, pdf = F,
-  add = F, plotlegend = T)
+  max(values(raster), na.rm = T)), numbreak = 10, mysequence = NULL,
+  midpoint = NULL, contrast = 0, pdf = F, add = F, plotlegend = T,
+  discrete = F)
 }
 \arguments{
 \item{raster}{A raster layer object}

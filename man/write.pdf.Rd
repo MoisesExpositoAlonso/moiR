@@ -4,7 +4,8 @@
 \alias{write.pdf}
 \title{A customized pdf function}
 \usage{
-write.pdf(filename, heightmm = 173, widthmm = 173, metricsystem = "mm")
+write.pdf(filename, heightmm = 173, widthmm = 173, metricsystem = "mm",
+  timestamp = F)
 }
 \arguments{
 \item{metricsystem}{String either "mm" or "inch". Default "mm" as it should be ;P}

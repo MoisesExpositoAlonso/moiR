@@ -11,7 +11,7 @@
 
 substrRight <- function(x, lastpos,giveright=T){
   if(giveright==T){
-  substr(x, nchar(x)-lastpos+1, nchar(x))
+  	substr(x, nchar(x)-lastpos+1, nchar(x))
   }else{
      substr(x, 1,nchar(x)-lastpos+1)
    }
