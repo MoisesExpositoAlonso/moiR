@@ -4,8 +4,9 @@
 \alias{ggdotscolor}
 \title{Quick scatter plot with points colored by a 3rd variable}
 \usage{
-ggdotscolor(data = NULL, x, y, varcol, ylab = NULL, xlab = NULL,
-  collab = NULL, mycolors = brewer.pal(10, name = "RdBu"))
+ggdotscolor(data = NULL, x, y, varcol = NULL, ylab = NULL, xlab = NULL,
+  collab = NULL, mycolors = brewer.pal(10, name = "RdBu"), contrast = 0,
+  ...)
 }
 \arguments{
 \item{data}{A dataset with 3 columns. It is assumed that 1 is x, 2 is y, 3 is varcol. This substitutes the use of x, y and varcol.}

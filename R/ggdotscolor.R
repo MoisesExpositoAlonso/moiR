@@ -20,7 +20,7 @@
 ggdotscolor<-function(data=NULL,x,y,varcol=NULL, ylab=NULL,xlab=NULL,collab=NULL,mycolors=brewer.pal(10,name = "RdBu"),contrast=0,...){
 library(ggplot2);library(cowplot);library(RColorBrewer)
 
-if(is.null(varcol)){varcol=rep(1,length(x) }
+if(is.null(varcol)){varcol<-rep(1,length(x)) }
 # data frame
 if(!is.null(data)){
 x=data[,1]
