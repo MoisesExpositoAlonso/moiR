@@ -2,14 +2,16 @@ Package: moiR
 Title: A set of R functions for an easy life and analyses
 Version: 0.0.1
 Authors@R: person("Moises", "Exposito-Alonso", email = "moisesexpositoalonso@gmail.com", role = c("aut", "cre"))
-Description: This package contains functions for data manipulation, fast plotting, things that you have to write in every script.
-Depends: R (>= 3.2.0)
+Description: This package contains functions for data manipulation, fast
+    plotting, things that you have to write in every script.
+Depends:
+    R (>= 3.2.0)
 Imports:
     ggplot2,
     cowplot,
     RColorBrewer
 Suggests:
-	dplyr,
+    dplyr,
     tidyr,
     devtools,
     raster,
@@ -20,4 +22,4 @@ URL: https://github.com/MoisesExpositoAlonso/moiR
 License: To be determined
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 5.0.1.9000
+RoxygenNote: 5.0.1

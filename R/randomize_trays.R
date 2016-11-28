@@ -1,27 +1,19 @@
 #' Quick scatter plot with points colored by a 3rd variable
 #' 
-#' @param x a numeric vector of group 1 
-#' @param y a numeric vector of group 2
-#' @param varcol either a numeric vector (continuous scale plotting) or factor variable (discrete plotting)
-#' @param data A dataset with 3 columns. It is assumed that 1 is x, 2 is y, 3 is varcol. This substitutes the use of x, y and varcol.
+#' @param accessions A vector of IDs of your genotypes
+#' @param replicates
+#' @param rowsize
+#' @param colsize
 #'
-#' @return A scatter plot from base plot with points colored by the rank of a given variable
+#' @return A randomized list of genotypes on pots of a tray. You can specify if you also want a pseudo-geographic position of genotypes.
 #'
 #' @examples
-#' x=rnomr(1,1,100)
-#' y=rnorm(1,2,100)
-#' x=rnorm(1,3,100)
-#' plotwithcolors(x=x,y=y,colorvar=z)
 #' 
-#' @seealso ggplot_world_map
-#' @export
 #' 
 
 
-randomize_genotype_trays<-function(){
-##### R code to randomize your experiment
-## you need to provide the IDs of your genotype, for instance in this case as a vector 
-accessionsid<-c("a vector of IDs of your genotypes")
+randomize_genotype_trays<-function(accessions, replicates, rowsize, colsize){
+set.seed(1)
 accessionsid<-c("999","333","666","992","332","662","991","331","661","990","330","660") ## this is an example
 numaccessions<-length(accessionsid)
 

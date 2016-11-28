@@ -5,21 +5,32 @@
 \title{Quick scatter plot with points colored by a 3rd variable}
 \usage{
 manhattan(data, chrpalette = c("black", "black", "black", "black", "black"),
-  empirical = NULL, type = "cumulative", nameplot = "",
-  pdfname = paste0(nameplot, "manhattan", ".pdf"), res = 1e+06)
+  type = "cumulative", everymb = 1, nameplot = "", pdfname = if
+  (nameplot != "") {     paste0(nameplot, "manhattan", ".pdf") } else {     NULL
+  }, res = 1e+06, empirical = if (ispvalue == TRUE) {     FALSE } else {    
+  "no" }, ispvalue = TRUE, ylab = if (ispvalue == TRUE) {     ylab =
+  "log10 p-values" } else {     "statistic" })
 }
 \arguments{
-\item{data}{A data.frame or matrix, with colnames 'chr', 'pos', and 'pval'.}
+\item{data}{A data.frame or matrix, with colnames 'chr', 'pos', and 'stat'.}
 
 \item{chrpalette}{A vector of colors or single color}
 
 \item{type}{Wether you want each chromosome separatedly plotted or all together. String "cumulative" or "perchromosome". Default cumulative}
+
+\item{everymb}{Resolution of the axis scale. Default one label every 1 Mb.}
 
 \item{nameplot}{data A dataset with 3 columns. It is assumed that 1 is x, 2 is y, 3 is varcol. This substitutes the use of x, y and varcol.}
 
 \item{pdfname}{pdf name to export plot}
 
 \item{res}{Numeric with the resoution to which chromosome positions wants to be round. Default Megabase.}
+
+\item{empirical}{Logical. Is the p value empirical p-value (that is, is in the range of < 0.0001?). Default FALSE.}
+
+\item{ylab}{Name of y lab. Default log10 p-value or statistic.}
+
+\item{ifpvalue}{Logical, flag to FALSE when using effect sizes instead of p-values}
 }
 \value{
 A scatter plot from base plot with points colored by the rank of a given variable

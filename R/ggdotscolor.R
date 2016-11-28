@@ -11,22 +11,28 @@
 #' x=rnomr(1,1,100)
 #' y=rnorm(1,2,100)
 #' x=rnorm(1,3,100)
-#' plotwithcolors(x=x,y=y,colorvar=z)
+#' ggdotscolor(x=x,y=y,colorvar=z)
 #'
 #' @seealso ggplot_world_map
 #' @export
 #'
 
-ggdotscolor<-function(data=NULL,x,y,varcol=NULL, ylab=NULL,xlab=NULL,collab=NULL,mycolors=brewer.pal(10,name = "RdBu"),contrast=0,...){
-library(ggplot2);library(cowplot);library(RColorBrewer)
+ggdotscolor<-function(data=NULL,x,y,varcol=NULL, ylab=deparse(substitute(y)),xlab=deparse(substitute(x)),collab=deparse(substitute(varcol)),mycolors=brewer.pal(10,name = "RdBu"),contrast=0,...){
 
-if(is.null(varcol)){varcol<-rep(1,length(x)) }
+  library(ggplot2);library(cowplot);library(RColorBrewer)
+
+if(is.null(varcol)){
+  varcol<-rep(1,length(x))
+  mycolors<-c("black")
+  collab=NULL
+
+}
 # data frame
 if(!is.null(data)){
 x=data[,1]
 y=data[,2]
 varcol=data[,3]
-}else{}
+}
 
 toplot<-data.frame(x,y,varcol)
 
@@ -35,7 +41,7 @@ if(is.null(ylab)){ xlab=deparse(substitute(x)) }
 if(is.null(xlab)){ ylab=deparse(substitute(y)) }
 if(is.null(collab)){ collab=deparse(substitute(varcol)) }
 
-p<-ggplot(toplot)+geom_point(aes(x=x,y=y , col=varcol ),...) + xlab(xlab)+ylab(ylab)
+p<-ggplot(toplot,aes(x=x,y=y , colour=varcol ),...)+geom_point(...) + xlab(xlab)+ylab(ylab)
 
 # color
 if(is.factor(toplot$varcol)){
@@ -54,5 +60,10 @@ if(is.factor(toplot$varcol)){
 	p<- p+  scale_colour_gradientn(collab,colours=mycolors)
 
 }
+
+if(is.null(collab) ){
+  p<-p+theme(legend.position="none")
+  }
+
 return(p)
 }

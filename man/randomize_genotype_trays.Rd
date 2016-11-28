@@ -4,31 +4,21 @@
 \alias{randomize_genotype_trays}
 \title{Quick scatter plot with points colored by a 3rd variable}
 \usage{
-randomize_genotype_trays()
+randomize_genotype_trays(accessions, replicates, rowsize, colsize)
 }
 \arguments{
-\item{x}{a numeric vector of group 1}
+\item{accessions}{A vector of IDs of your genotypes}
 
-\item{y}{a numeric vector of group 2}
-
-\item{varcol}{either a numeric vector (continuous scale plotting) or factor variable (discrete plotting)}
-
-\item{data}{A dataset with 3 columns. It is assumed that 1 is x, 2 is y, 3 is varcol. This substitutes the use of x, y and varcol.}
+\item{colsize}{}
 }
 \value{
-A scatter plot from base plot with points colored by the rank of a given variable
+A randomized list of genotypes on pots of a tray. You can specify if you also want a pseudo-geographic position of genotypes.
 }
 \description{
 Quick scatter plot with points colored by a 3rd variable
 }
 \examples{
-x=rnomr(1,1,100)
-y=rnorm(1,2,100)
-x=rnorm(1,3,100)
-plotwithcolors(x=x,y=y,colorvar=z)
 
-}
-\seealso{
-ggplot_world_map
+
 }
 
