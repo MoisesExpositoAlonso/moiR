@@ -41,7 +41,7 @@ if(is.null(ylab)){ xlab=deparse(substitute(x)) }
 if(is.null(xlab)){ ylab=deparse(substitute(y)) }
 if(is.null(collab)){ collab=deparse(substitute(varcol)) }
 
-p<-ggplot(toplot,aes(x=x,y=y , colour=varcol ),...)+geom_point(...) + xlab(xlab)+ylab(ylab)
+p<-ggplot(toplot,aes(x=x,y=y , colour=varcol ),...)+geom_point() + xlab(xlab)+ylab(ylab)
 
 # color
 if(is.factor(toplot$varcol)){
