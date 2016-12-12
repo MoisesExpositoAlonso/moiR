@@ -19,7 +19,7 @@ Prune a set of variables by a certain correlation threshold
 }
 \examples{
 data(mtcars)
-prune_corr(mtcars)  
+prune_corr(mtcars)
 
 }
 

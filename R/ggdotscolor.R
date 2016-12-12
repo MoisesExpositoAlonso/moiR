@@ -19,7 +19,10 @@
 
 ggdotscolor<-function(data=NULL,x,y,varcol=NULL, ylab=deparse(substitute(y)),xlab=deparse(substitute(x)),collab=deparse(substitute(varcol)),mycolors=brewer.pal(10,name = "RdBu"),contrast=0,...){
 
-  library(ggplot2);library(cowplot);library(RColorBrewer)
+library(ggplot2)
+library(cowplot)
+library(RColorBrewer)
+library(dplyr)
 
 if(is.null(varcol)){
   varcol<-rep(1,length(x))
@@ -37,11 +40,8 @@ varcol=data[,3]
 toplot<-data.frame(x,y,varcol)
 
 #make base plot
-if(is.null(ylab)){ xlab=deparse(substitute(x)) }
-if(is.null(xlab)){ ylab=deparse(substitute(y)) }
-if(is.null(collab)){ collab=deparse(substitute(varcol)) }
 
-p<-ggplot(toplot,aes(x=x,y=y , colour=varcol ),...)+geom_point() + xlab(xlab)+ylab(ylab)
+p<-ggplot(toplot,aes(x=x,y=y , colour=varcol ),...)+geom_point(...) + xlab(xlab)+ylab(ylab)
 
 # color
 if(is.factor(toplot$varcol)){
@@ -61,9 +61,7 @@ if(is.factor(toplot$varcol)){
 
 }
 
-if(is.null(collab) ){
-  p<-p+theme(legend.position="none")
-  }
+if(is.null(collab) ){ return( p %>% nolegendgg())}
+else{return(p)}
 
-return(p)
 }

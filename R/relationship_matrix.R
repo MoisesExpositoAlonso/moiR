@@ -92,3 +92,58 @@ solveAmat=function(Amat){
   Ainv<-as(solve(Amat), "dgCMatrix")
   return(Ainv)
 }
+
+
+# GRM.2<-function(mat){
+# Z=mat
+# Z[is.na(Z)]=1
+# Zoriginal=Z
+#
+#
+# N=dim(Z)[2]
+# ind=dim(Z)[1]
+#
+#
+#
+# p= apply(Z,2,FUN=function(x) sum(x)) / apply(Z,2,FUN=function(x) length(x)*2)
+# k= 2 * sum(p * (1-p) )
+#
+# centering= rbind(0-2*p,
+#                  1-2*p,
+#                  2-2*p
+#                  )
+# Z.cent= apply(,function(x) return(centering[Z[,x],x]) )
+# Z.cent=do.call(cbind,Z.cent)
+#
+# Amat1=( Z %*% t(Z) )/ k
+# Amat2=( Z.cent %*% t(Z.cent) )/ k
+#
+# plot((Amat2) ~ (Amat1))
+#
+# http://nce.ads.uga.edu/wiki/lib/exe/fetch.php?media=uga_pregs.pdf
+# }
+
+
+
+#
+#
+# library(pedigree)
+# # gblup
+# M_nona<-M
+# M_nona[is.na(M_nona)]=1 # I am going to treat the NAs as heterozygotes. The relationship matrix will be probably underestimated, but does not accept NAs.
+#
+# Amatnew= calcG(M_nona)
+# plot(fn(Amatnew) ~ fn(normaldist))
+#
+# # dim(Amatnew)
+# # hist(fn(Amatnew))
+# #
+# example(gblup)
+# G <- calcG(M)
+# # Ginv <- calcG(M,solve = TRUE)
+#
+# M[1:5,1:5]
+# M_nona[1:5,1:5]
+#
+# diag(Amatnew)
+

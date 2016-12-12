@@ -11,7 +11,7 @@ prune_corr(thedata, threshold = 0.8, iterations = 10)
 
 \item{threshold}{The threshold of correlation coefficient. Default 0.8}
 
-\item{iterations}{The algorithm function will stop when no more variables are correlated 
+\item{iterations}{The algorithm function will stop when no more variables are correlated
 over the specificed threshold or given a number of iterations. This is importante for big
 datasets with thousands of variables, which perhaps is not that appropriate for the function.}
 }

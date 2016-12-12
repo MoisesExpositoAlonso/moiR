@@ -1,6 +1,6 @@
 #' Quick plot + contrast hypothesis test to compare two populations
-#' 
-#' @param numeric1 a numeric vector of group 1 
+#'
+#' @param numeric1 a numeric vector of group 1
 #' @param numeric2 a numeric vector of group 2
 #' @param method string, either t.student (parametric) or wilcox.test (nonparametric)
 #' @param title string with the name of the plot
@@ -16,7 +16,7 @@
 #' thetimenow<-contrast_test(group1,group2)
 #'
 #' @export
-#' 
+#'
 
 contrast_test<-function(numeric1,numeric2,method ="t.test",title=NULL,wantpoints=FALSE,wantviolin=TRUE,colorpair=c("darkorchid4","aquamarine4")){
 
@@ -56,7 +56,7 @@ write.pdf(paste("contrast_plot",title,numeric1name,numeric2name,sep="_"))
       toplot_melt<-rbind(numeric1data,numeric2data)
 
       p<-ggplot(data=toplot_melt)+geom_violin(trim=FALSE,aes(x = variable,y=value,fill=variable),alpha=0.2)+ theme_cowplot()+xlab("")+ylab("")+
-       scale_fill_manual(values =colorpair,guide=F )+geom_boxplot(aes(x = variable,y=value ),color=colorpair,width=0.2)+ggtitle(paste(method,"p = ",p )) 
+       scale_fill_manual(values =colorpair,guide=F )+geom_boxplot(aes(x = variable,y=value ),color=colorpair,width=0.2)+ggtitle(paste(method,"p = ",p ))
         if(wantpoints==T ){
         p<-p + geom_point(aes(x = variable,y=value,color=variable))+scale_color_manual(values=transparent(colorpair))
         print(p)
