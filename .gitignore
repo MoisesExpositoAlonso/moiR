@@ -6,3 +6,5 @@ update_package.sh
 build_n_copy.R
 *swp
 *~
+*sh
+docs.R

@@ -49,7 +49,7 @@ if(is.factor(toplot$varcol)){
 		if(mycolors==brewer.pal(10,name = "RdBu")){
 		mycolors=c("#1f78b4","#b2df8a","#33a02c","#fb9a99","#e31a1c","#fdbf6f","#ff7f00","#cab2d6","#6a3d9a","gold","#a6cee3")
 		}
-	colpal<-make.pallete.contrast(colors11,contrast)
+	colpal<-make.pallete.contrast(mycolors,contrast)
 	p<-p+ scale_color_manual(collab,values=colpal(length(levels(varcol))),breaks=levels(varcol) )
 
 }else{
