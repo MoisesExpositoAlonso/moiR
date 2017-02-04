@@ -1,5 +1,5 @@
 
-# Some handy R functions for an easier life and analyses
+# Some handy functions for an easier R life 
 
  Most functions fall in the next categories
 * Plotting (I use base plot, but prefer ggplot2 and cowplot)
