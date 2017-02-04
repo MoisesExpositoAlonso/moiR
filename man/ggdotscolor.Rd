@@ -4,19 +4,18 @@
 \alias{ggdotscolor}
 \title{Quick scatter plot with points colored by a 3rd variable}
 \usage{
-ggdotscolor(data = NULL, x, y, varcol = NULL,
-  ylab = deparse(substitute(y)), xlab = deparse(substitute(x)),
-  collab = deparse(substitute(varcol)), mycolors = brewer.pal(10, name =
-  "RdBu"), contrast = 0, ...)
+ggdotscolor(x, y, varcol = NULL, ylab = deparse(substitute(y)),
+  xlab = deparse(substitute(x)), collab = deparse(substitute(varcol)),
+  mycolors = brewer.pal(10, name = "RdBu"), contrast = 0, ...)
 }
 \arguments{
-\item{data}{A dataset with 3 columns. It is assumed that 1 is x, 2 is y, 3 is varcol. This substitutes the use of x, y and varcol.}
-
 \item{x}{a numeric vector of group 1}
 
 \item{y}{a numeric vector of group 2}
 
 \item{varcol}{either a numeric vector (continuous scale plotting) or factor variable (discrete plotting)}
+
+\item{data}{A dataset with 3 columns. It is assumed that 1 is x, 2 is y, 3 is varcol. This substitutes the use of x, y and varcol.}
 }
 \value{
 A scatter plot from base plot with points colored by the rank of a given variable

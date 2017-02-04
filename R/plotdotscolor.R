@@ -2,10 +2,10 @@
 #'
 #' @param numeric1 a numeric vector of group 1
 #' @param numeric2 a numeric vector of group 2
-#' @param colorvar
-#' @param breaks
-#' @param pch
-#' @param alpha
+#' @param colorvar a numeric vector for the color gradient
+#' @param breaks numeric value of how many braks are wanted for the color palette
+#' @param pch what shape of points is wanted. default 19
+#' @param alpha what transparency of dots is wanted
 #'
 #' @return A scatter plot from base plot with points colored by the rank of a given variable
 #'
@@ -19,6 +19,19 @@
 #'
 #' @export
 #'
+
+plotdotscolor<-function(x,y,colorvar,palette=c("red","orange","yellow","green","blue"),breaks=50,pch=19,alpha=0.5,add=F,...){
+
+colfun<-make.pallete.contrast(palette)
+colores <- colfun(breaks) [as.numeric(cut(colorvar,breaks = breaks))]
+
+if(add!=T){
+  plot(x=x,y=y,cex=0)
+}else{
+  points(x=x,y=y,col=transparent(colores,alpha=alpha),pch=pch,...)
+}
+}
+
 # plotwithcolors<-function(x,y,colorvar,palette=c("red","orange","yellow","green","blue"),pch=19,alpha=0.5){
 #
 #   colfun<-make.pallete.contrast(palette) #paleta de colores de azul(pocos trich) a rojo (muchos)
@@ -31,15 +44,3 @@
 # accmaster$Col <- make.pallete.contrast( (brewer.pal(10,"RdBu")),raw = F )(breaks) [as.numeric(cut(log10(accmaster$T_repro),breaks = breaks))]
 #
 #
-plotdotscolor<-function(x,y,colorvar,palette=c("red","orange","yellow","green","blue"),breaks=50,pch=19,alpha=0.5,add=F,...){
-
-colfun<-make.pallete.contrast(palette) #paleta de colores de azul(pocos trich) a rojo (muchos)
-# colfun<-make.pallete.contrast((brewer.pal(10,"RdBu")))
-
-
-colores <- colfun(breaks) [as.numeric(cut(colorvar,breaks = breaks))]
-
-if(add!=T){plot(x=x,y=y,cex=0)}
-points(x=x,y=y,col=transparent(colores,alpha=alpha),pch=pch,...)
-
-}

@@ -20,59 +20,37 @@
 #'
 #' @export
 #'
-envirplot<-function(raster,objectname=deparse(substitute(raster)),name="",
-  dimcol=100,
-  vecol=c('cyan','dodgerblue1','blue','forestgreen','orange','red','purple'),
-  breaks=format(seq(rangecol[1],rangecol[2],len=numbreak),digits = 1),
-  rangecol=c(min(values(raster),na.rm = T),max(values(raster),na.rm = T) ),
-  numbreak=10,
-  mysequence=NULL,
-  midpoint=NULL,
-  contrast=0,
-  pdf=F, add=F,plotlegend=T,discrete=F){
 
-library(raster)
+# envirplot(raster)
+envirplot<-function(raster,
+objectname=deparse(substitute(raster)),
+name="",
+midpoint=NULL,
+rangecol=c(min(values(raster),na.rm = T),max(values(raster),na.rm = T) ),
+dimcol=100,
+numbreak=10,
+legendbreak = format( if(!is.null(midpoint)){c(seq(rangecol[1],midpoint,len = round(numbreak/2 )  ), seq(midpoint,rangecol[2],len = round(numbreak/2 )  ) [-1]  )}else{seq(rangecol[1],rangecol[2],len=numbreak)} , digits=1),
+colorbreak = if(!is.null(midpoint)){c(seq(rangecol[1],midpoint,len = round(dimcol/2 )  ), seq(midpoint,rangecol[2],len = round(dimcol/2 )  ) [-1]  )}else{seq(rangecol[1],rangecol[2],len=dimcol-1)},
+vecol=NULL,
+contrast=4,
+discretebreaks=na.omit(unique(values(raster))),
+discretelabels=na.omit(unique(values(raster))),
+pdf=F, add=F,plotlegend=T,discrete=F){
 
-if(pdf == T ){ write.pdf(paste0("plots/raster_",objectname,"_",name,".pdf")) }
-
-# Generate color
-mypalette<-make.pallete.contrast(vecol)
-
-# Generate sequence of breaks in legend
-if(is.null(mysequence)){ message('my sequence null, then creating sequence')
-  if(is.null(midpoint)){  mysequence<- seq(rangecol[1],rangecol[2],len = numbreak-1)     }
-    else
-      {
-  	  if( midpoint <rangecol[1] | midpoint > rangecol[2] ) { stop("Error: midpoint must be within the range of your data!") }
-      mysequence<- c(seq(rangecol[1],midpoint,len = round(dimcol/2 )  ), seq(midpoint,rangecol[2],len = round(dimcol/2 )  ) [-1]  )
-      }
-}
-
-# Plot
-if(discrete==T){
-plot(raster, xaxt="n", yaxt="n", main="", col=vecol, axes=F,box=F,frame.plot=F,bty="n",add=add,legend=plotlegend)
+if(length(vecol)==1 & !is.null(vecol)){ discrete=T}
+  
+if(discrete==F){
+  if(is.null(vecol)){vecol=c('cyan','dodgerblue1','blue','forestgreen','orange','red','purple')}
+  mypalette=make.pallete.contrast(vecol,contrast)
+  raster::plot(raster,xaxt="n", yaxt="n",ylab="",xlab="" ,main=name ,breaks=colorbreak,axis.args=list(at=legendbreak), col=mypalette(dimcol-2), axes=F,box=F,frame.plot=F,bty="n", add=add, legend=plotlegend)
 
 }else{
 
-arg <- list(at=breaks)
-
-print(mysequence)
-print(breaks)
-print(mypalette(dimcol))
-
-# plot(raster, xaxt="n", yaxt="n", main="", col=mypalette(dimcol), axis.args=arg,breaks=mysequence,axes=F,box=F,frame.plot=F,bty="n",add=add,legend=plotlegend) # this does not work anymore
-plot(raster, xaxt="n", yaxt="n", main="", col=mypalette(dimcol), axes=F,box=F,frame.plot=F,bty="n",add=add,legend=plotlegend) # this does not work anymore
-# plot(raster, xaxt="n", yaxt="n", main="", col=mypalette(dimcol), breaks=mysequence,axes=F,box=F,frame.plot=F,bty="n",add=add,legend=plotlegend)
-# plot(raster, xaxt="n", yaxt="n", main="", col=mypalette(dimcol), axes=F,box=F,frame.plot=F,bty="n",add=add,legend=plotlegend)
-# plot(raster, xaxt="n", yaxt="n", main="", col=mypalette(dimcol), axis.args=arg,axes=F,box=F,frame.plot=F,bty="n",add=add,legend=plotlegend)
-# plot(raster, xaxt="n", yaxt="n", main="", col=mypalette(dimcol), breaks=mysequence,axis.args=arg,axes=F,box=F,frame.plot=F,bty="n")
-# box()
-
+  if(is.null(vecol)){ vecol= mypalettes("colors11")[1:length(discretelabels)] }
+  raster::plot(raster,xaxt="n", yaxt="n",ylab="",xlab="" ,main=name ,axis.args=list(at=discretebreaks,label=discretelabels), col=vecol, axes=F,box=F,frame.plot=F,bty="n", add=add, legend=plotlegend)
+  
+}
+  
 }
 
 
-title(paste(name))
-
-if(pdf == T ){ dev.off() }
-
-}

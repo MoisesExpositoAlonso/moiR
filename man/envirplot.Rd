@@ -5,12 +5,18 @@
 \title{Pretty plot of raster object}
 \usage{
 envirplot(raster, objectname = deparse(substitute(raster)), name = "",
-  dimcol = 100, vecol = c("cyan", "dodgerblue1", "blue", "forestgreen",
-  "orange", "red", "purple"), breaks = format(seq(rangecol[1], rangecol[2],
-  len = numbreak), digits = 1), rangecol = c(min(values(raster), na.rm = T),
-  max(values(raster), na.rm = T)), numbreak = 10, mysequence = NULL,
-  midpoint = NULL, contrast = 0, pdf = F, add = F, plotlegend = T,
-  discrete = F)
+  midpoint = NULL, rangecol = c(min(values(raster), na.rm = T),
+  max(values(raster), na.rm = T)), dimcol = 100, numbreak = 10,
+  legendbreak = format(if (!is.null(midpoint)) {     c(seq(rangecol[1],
+  midpoint, len = round(numbreak/2)), seq(midpoint, rangecol[2], len =
+  round(numbreak/2))[-1]) } else {     seq(rangecol[1], rangecol[2], len =
+  numbreak) }, digits = 1), colorbreak = if (!is.null(midpoint)) {    
+  c(seq(rangecol[1], midpoint, len = round(dimcol/2)), seq(midpoint,
+  rangecol[2], len = round(dimcol/2))[-1]) } else {     seq(rangecol[1],
+  rangecol[2], len = dimcol - 1) }, vecol = NULL, contrast = 4,
+  discretebreaks = na.omit(unique(values(raster))),
+  discretelabels = na.omit(unique(values(raster))), pdf = F, add = F,
+  plotlegend = T, discrete = F)
 }
 \arguments{
 \item{raster}{A raster layer object}
@@ -19,15 +25,13 @@ envirplot(raster, objectname = deparse(substitute(raster)), name = "",
 
 \item{name}{Title fo the plot}
 
-\item{dimcol}{Number of color breaks in the gradient}
-
-\item{vecol}{Color vector for the palette}
-
-\item{breaks}{Breaks used in the color scale}
-
 \item{rangecol}{Range of the color palette}
 
+\item{dimcol}{Number of color breaks in the gradient}
+
 \item{numbreak}{Number of breaks in the color scale}
+
+\item{vecol}{Color vector for the palette}
 
 \item{contrast}{Interger for number of increase contrast iteration}
 
@@ -36,6 +40,8 @@ envirplot(raster, objectname = deparse(substitute(raster)), name = "",
 \item{add}{Logical whether this plot will be overplotted on an existing one in the graphic device}
 
 \item{plotlegend}{Logical whether the color legend is plotted. Useful when overlaying two maps.}
+
+\item{breaks}{Breaks used in the color scale}
 }
 \value{
 Prints a plot of a raster object with a nice color palette and without axis (easily changed). If desired, it is outputed as pdf'.

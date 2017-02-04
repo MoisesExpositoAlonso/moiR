@@ -17,12 +17,7 @@
 #' @export
 #'
 
-ggdotscolor<-function(data=NULL,x,y,varcol=NULL, ylab=deparse(substitute(y)),xlab=deparse(substitute(x)),collab=deparse(substitute(varcol)),mycolors=brewer.pal(10,name = "RdBu"),contrast=0,...){
-
-library(ggplot2)
-library(cowplot)
-library(RColorBrewer)
-library(dplyr)
+ggdotscolor<-function(x,y,varcol=NULL, ylab=deparse(substitute(y)),xlab=deparse(substitute(x)),collab=deparse(substitute(varcol)),mycolors=brewer.pal(10,name = "RdBu"),contrast=0,...){
 
 if(is.null(varcol)){
   varcol<-rep(1,length(x))
@@ -30,12 +25,7 @@ if(is.null(varcol)){
   collab=NULL
 
 }
-# data frame
-if(!is.null(data)){
-x=data[,1]
-y=data[,2]
-varcol=data[,3]
-}
+
 
 toplot<-data.frame(x,y,varcol)
 

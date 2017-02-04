@@ -8,7 +8,13 @@ plotdotscolor(x, y, colorvar, palette = c("red", "orange", "yellow", "green",
   "blue"), breaks = 50, pch = 19, alpha = 0.5, add = F, ...)
 }
 \arguments{
-\item{alpha}{}
+\item{colorvar}{a numeric vector for the color gradient}
+
+\item{breaks}{numeric value of how many braks are wanted for the color palette}
+
+\item{pch}{what shape of points is wanted. default 19}
+
+\item{alpha}{what transparency of dots is wanted}
 
 \item{numeric1}{a numeric vector of group 1}
 
