@@ -17,7 +17,7 @@
 #'
 cormatrix_r_p<-function(numericdatanona,columnpos=NULL,filename=NULL,method="pearson") {
 
-if(is.null(columnpos)){ 	columnpos=1:dim(dataset) }
+if(is.null(columnpos)){ 	columnpos=1:dim(numericdatanona) }
 
 # check that dataset is good
 numericdatanona<-numericdatanona[,columnpos]
