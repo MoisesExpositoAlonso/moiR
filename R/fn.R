@@ -12,3 +12,6 @@
 fn<-function(data.frame){
 	as.numeric(as.matrix(data.frame))
 }
+fc<-function(data.frame){
+	as.character(as.matrix(data.frame))
+}
