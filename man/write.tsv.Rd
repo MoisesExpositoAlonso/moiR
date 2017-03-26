@@ -4,7 +4,7 @@
 \alias{write.tsv}
 \title{Customized write.table function with table separated values.}
 \usage{
-write.tsv(table, file)
+write.tsv(table, file, ...)
 }
 \arguments{
 \item{table}{data.frame, vector, matrix to write}
