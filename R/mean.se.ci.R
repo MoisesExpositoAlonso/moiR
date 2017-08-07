@@ -24,4 +24,15 @@ mean.ci<-function(x,digits=3,sep=','){
 
   # make the exponent x 10
   toreport=gsub(toreport,    pattern = "e",replacement=' x 10',fixed=T)
+return(toreport)
+}
+
+mean.ci.v<-function(x,...){
+
+  if(!any(dim(x) == 3)){
+    stop("Need to provide a vector of length 3 or an array one of which dymensions is 3")
+  }
+# finish vectorized implementation
+  mean.ci(x,...)
+
 }

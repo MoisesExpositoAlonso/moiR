@@ -4,7 +4,7 @@
 \alias{starpvalue}
 \title{Transform a vector of p-values into ***, **, *, ., ns}
 \usage{
-starpvalue(x)
+starpvalue(x, samelength = F)
 }
 \arguments{
 \item{x}{A numeric vector of p-values}
