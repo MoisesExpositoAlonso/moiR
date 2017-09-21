@@ -11,7 +11,7 @@
 mean.ci<-function(x,digits=3,sep=','){
 
   # round
-  x= format(x,digits=digits)
+  x= specify_decimal(x,digits)
 
   # collapse
   if(length(x) ==2){
@@ -34,5 +34,20 @@ mean.ci.v<-function(x,...){
   }
 # finish vectorized implementation
   mean.ci(x,...)
+
+}
+
+specify_decimal <- function(x, k) trimws(format(round(x, k), nsmall=k))
+
+
+mean_se<-function(x){
+a <- mean(x,na.rm = TRUE)
+s <- sd(x,na.rm = TRUE)
+n <- length(x)
+error <- qt(0.975,df=n-1)*s/sqrt(n)
+l <- a-error
+r <- a+error
+
+mean.ci(c(a,l,r),digits = 2)
 
 }

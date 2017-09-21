@@ -27,7 +27,7 @@ tp=data.frame(x=as.numeric(x),y=as.numeric(y))
 myplot<- ggplot(data=tp,aes(y=y,x=x),colour=color, ...)+geom_point() +    ylab(ylab)+     xlab(xlab)
 # p1 <- p + geom_text(x = 25, y = 300, label = lm_eqn(df), parse = TRUE)
 if(doregression==T){
-myplot<- myplot+ geom_smooth(aes(y=y,x=x),method="glm",colour=color)+   annotate("text",  x=Inf, y = Inf, label = lm_eq(y,x),parse=T, vjust=1, hjust=1)
+myplot<- myplot+ geom_smooth(aes(y=y,x=x),method="glm",colour=color)+   annotate("text",  x=Inf, y = Inf, label = lm_eq(y,x),parse=FALSE, vjust=1, hjust=1)
 }
 if(doloess==T){
 for(span in span){
