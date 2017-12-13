@@ -19,8 +19,8 @@
 addggregression<-function(myplot  ,doregression=T ,doloess=F, span=if(doloess==T){ c(.5,1,1.5,2)} ,colour="black", ...) {
 
   if(doregression==T){
-    myplot<- myplot+ stat_smooth (method="glm",colour=colour, ...) +   annotate("text",  x=Inf, y = Inf, label = lm_eq(myplot$data$y,myplot$data$x), vjust=1, hjust=1)
-    print(lm_eq(myplot$data$y,myplot$data$x))
+    myplot<- myplot+ stat_smooth (method="glm",colour=colour, ...) +
+      annotate("text",  x=Inf, y = Inf, label = lm_eq(myplot$data$y,myplot$data$x), vjust=1, hjust=1,parse=TRUE)
   }
 
   if(doloess==T){
