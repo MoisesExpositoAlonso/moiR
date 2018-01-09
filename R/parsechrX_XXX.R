@@ -13,7 +13,7 @@
 #' @export
 
 parsechrX_XXX<-function(strings){
-  spl<-unlist(strsplit(gwanew$namesite,split = "_",fixed=T))
+  spl<-unlist(strsplit(strings,split = "_",fixed=T))
   chr<-gsub( spl[seq(1,length(spl),by=2)], pattern = "chr",replacement = "")
   pos<-spl[seq(2,length(spl),by=2)]
   toreport<-data.frame(Chromosome=as.numeric(chr),Position=as.numeric(pos) )
