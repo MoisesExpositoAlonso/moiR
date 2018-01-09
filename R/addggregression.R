@@ -20,7 +20,8 @@ addggregression<-function(myplot  ,doregression=T ,doloess=F, span=if(doloess==T
 
   if(doregression==T){
     myplot<- myplot+ stat_smooth (method="glm",colour=colour, ...) +
-      annotate("text",  x=Inf, y = Inf, label = lm_eq(myplot$data$y,myplot$data$x), vjust=1, hjust=1,parse=TRUE)
+      # annotate("text",  x=Inf, y = Inf, label = lm_eq(myplot$data$y,myplot$data$x), vjust=1, hjust=1,parse=TRUE)
+      ggtitle(TeX(lm_eq(myplot$data$y,myplot$data$x,tex = T)) )
   }
 
   if(doloess==T){
