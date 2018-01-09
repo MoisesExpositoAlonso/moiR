@@ -15,11 +15,13 @@
 #'
 
 
-lm_eq <- function(y, x){
+lm_eq <- function(y, x,tex=TRUE){
     mylm <- lm(y ~ x)
-    p= format(coefficients( summary(mylm )) [2,4],digits = 3)
-    r2 = format(summary(mylm)$r.squared, digits = 3)
+    p= format(coefficients( summary(mylm )) [2,4],digits = 3,scientific = TRUE)
+    r2 = round(summary(mylm)$r.squared, digits = 3)
+    b = round(coefficients( summary(mylm )) [2,1],digits = 3)
 
-    sprintf( "r2= %s, p= %s",r2,p)
+    if(tex==FALSE){  sprintf( "R2= %s, b= %s, p= %s",r2,b,p) }
+    else{latex2exp::TeX(paste("$R^2=$",r2,",$ \\beta =$",b , ", $ p=$",p ),output='character')}
 }
 
