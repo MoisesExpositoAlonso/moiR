@@ -28,3 +28,20 @@ lm_eq <- function(y, x,tex=TRUE){
     }
 }
 
+#' @export
+
+r2_eq <- function(y, x,tex=TRUE){
+    # mylm <- lm(y ~ x)
+    mylm <- cor.test(y , x)
+    p= format(mylm$p.value,digits = 3,scientific = TRUE)
+    r2=round(mylm$estimate, digits = 3)
+    
+
+    if(tex==FALSE){
+      
+      return(sprintf( "r= %s, p= %s",r2,p))
+    }else{
+    	return(paste0("$r = $",r2, ", $ p = $",p ))
+    }
+}
+
