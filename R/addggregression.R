@@ -16,17 +16,23 @@
 #'
 
 
-addggregression<-function(myplot  ,doregression=T ,doloess=F, span=if(doloess==T){ c(.5,1,1.5,2)} ,colour="black", ...) {
+addggregression<-function(myplot  ,doregression=T ,doloess=F, docorrelation=F, span=if(doloess==T){ c(.5,1,1.5,2)} ,colour="black", ...) {
 
-  if(doregression==T){
+  if(doregression==T & docorrelation==F){
     myplot<- myplot+ stat_smooth (method="glm",colour=colour, ...) +
-      annotate("text",  x=Inf, y = Inf, label = lm_eq(myplot$data$y,myplot$data$x), vjust=1, hjust=1,parse=TRUE)
+      # annotate("text",  x=Inf, y = Inf, label = lm_eq(myplot$data$y,myplot$data$x), vjust=1, hjust=1,parse=TRUE)
+      ggtitle(TeX(lm_eq(myplot$data$y,myplot$data$x,tex = T)) )
   }
-
-  if(doloess==T){
+  if(doloess==T & docorrelation==F){
   for(span in span){
       myplot<-  myplot + stat_smooth(method="loess",span=span, colour=colour, ...)
     }
   }
+	if(docorrelation==T){
+	    myplot<- myplot+ stat_smooth (method="glm",colour=colour, ...) +
+	    	ggtitle(TeX(r2_eq(myplot$data$y,myplot$data$x,tex = T)) )
+
+	}
+	
   return(myplot)
 }
