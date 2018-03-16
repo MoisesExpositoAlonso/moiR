@@ -7,10 +7,10 @@ Description: This package contains functions for data manipulation, fast
 Depends:
     R (>= 3.2.0)
 Imports:
+Suggests:
     ggplot2,
     cowplot,
-    RColorBrewer
-Suggests:
+    RColorBrewer,
     dplyr,
     tidyr,
     devtools,
