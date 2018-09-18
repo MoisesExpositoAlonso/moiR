@@ -10,6 +10,6 @@
 #' @export
 #'
 fn<-function(data.frame){
-	as.numeric(as.matrix(data.frame))
+unlist(as.numeric(as.matrix(data.frame)))
 }
 
