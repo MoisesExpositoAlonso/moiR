@@ -18,7 +18,7 @@
 
 ggplot_world_map<-function(mapcol="seashell3",backcol="white",countrycol=mapcol,projection="cartesian",xlim=c(-200,+200),ylim=c(-60,+80),orientation=c(80,0,0)){
 
-stopifnot(projection %in% c("cartesian","perspective","mercator"))
+
 library(ggplot2)
 library(cshapes)
 library(gpclib)
