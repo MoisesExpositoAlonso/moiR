@@ -35,7 +35,7 @@ p1<-p1+ geom_polygon(data=world.points, aes(long,lat,group=group) ,fill=mapcol,c
 
 if(projection=="cartesian") {p1<-p1+   coord_cartesian(xlim = xlim,ylim=ylim)
 }else if(projection=="mercator"){p1<-p1+   coord_map("mercator",xlim = xlim,ylim=ylim)
-}else if(projection=="perspective"){p1<-p1+   coord_map("perspective",dist=1, xlim = xlim,ylim=ylim)}
+}else if(projection=="perspective"){p1<-p1+   coord_map("perspective",dist=1, xlim = xlim,ylim=ylim)
 }else if(projection=="ortho"){p1<-p1+   coord_map("ortho", xlim = xlim,ylim=ylim, orientation=orientation)}
 else{stop("Unknown projection")}
 
